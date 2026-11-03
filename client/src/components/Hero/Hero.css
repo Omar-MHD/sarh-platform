@@ -1,0 +1,132 @@
+
+.hero-section {
+  min-height: 480px;
+  padding: 90px 7%;
+  display: flex;
+  align-items: center;
+  background:
+    radial-gradient(circle at 85% 20%, rgba(143, 185, 204, 0.3), transparent 35%),
+    linear-gradient(120deg, var(--color-bg), var(--color-surface));
+  position: relative;
+  overflow: hidden;
+}
+
+.hero-content {
+  width: 100%;
+  max-width: 850px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-label {
+  display: inline-block;
+  padding: 8px 16px;
+  border-radius: 30px;
+  background: rgba(143, 185, 204, 0.2);
+  color: var(--color-primary-dark);
+  font-size: 14px;
+  font-weight: 600;
+  margin-bottom: 22px;
+}
+
+:root[data-theme="dark"] .hero-label {
+  color: var(--color-primary);
+}
+
+.hero-content h1 {
+  max-width: 750px;
+  font-size: clamp(32px, 4.5vw, 54px);
+  line-height: 1.4;
+  color: var(--color-text);
+  margin: 0 0 18px;
+}
+
+.hero-description {
+  max-width: 650px;
+  font-size: 18px;
+  line-height: 1.9;
+  color: var(--color-text-muted);
+  margin-bottom: 30px;
+}
+
+.hero-buttons {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+  margin-bottom: 38px;
+}
+
+.hero-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 13px 25px;
+  border-radius: 12px;
+  font-weight: 600;
+  transition: 0.2s;
+}
+
+.hero-button:hover {
+  transform: translateY(-2px);
+}
+
+.hero-button.primary {
+  background: var(--color-primary-dark);
+  color: white;
+}
+
+.hero-button.secondary {
+  border: 1px solid var(--color-primary-dark);
+  color: var(--color-text);
+}
+
+.hero-search {
+  display: flex;
+  width: 100%;
+  max-width: 750px;
+  padding: 8px;
+  gap: 10px;
+  border: 1px solid var(--color-border);
+  border-radius: 16px;
+  background: var(--color-surface);
+  box-shadow: var(--shadow);
+}
+
+.hero-search input {
+  flex: 1;
+  min-width: 0;
+  padding: 12px;
+  border: none;
+  outline: none;
+  background: transparent;
+  color: var(--color-text);
+  font-size: 15px;
+}
+
+.hero-search button {
+  padding: 12px 25px;
+  border: none;
+  border-radius: 10px;
+  background: var(--color-primary-dark);
+  color: white;
+  font-weight: 600;
+}
+
+@media (max-width: 600px) {
+  .hero-section {
+    min-height: auto;
+    padding: 65px 20px;
+  }
+
+  .hero-description {
+    font-size: 16px;
+  }
+
+  .hero-search {
+    flex-direction: column;
+  }
+
+  .hero-search button {
+    width: 100%;
+  }
+}
