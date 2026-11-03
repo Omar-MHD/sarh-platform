@@ -1,7 +1,7 @@
 
 import "./Navbar.css";
 
-import LanguageSwitcher from "../LanguageSwitcher";
+import LanguageSwitcher from "../Switchers/LanguageSwitcher";
 import ThemeSwitcher from "../ThemeSwitcher";
 import { usePreferences } from "../../context/PreferencesContext";
 
