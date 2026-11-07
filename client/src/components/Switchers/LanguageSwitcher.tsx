@@ -1,5 +1,5 @@
 
-import { usePreferences } from "../../context/PreferencesContext";
+import { usePreferences } from '../../context/PreferencesContext';
 
 export default function LanguageSwitcher() {
   const { language, setLanguage } = usePreferences();

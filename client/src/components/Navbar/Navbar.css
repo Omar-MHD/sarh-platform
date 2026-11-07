@@ -1,4 +1,3 @@
-
 .navbar {
   width: 100%;
   background: var(--color-surface);
@@ -28,6 +27,7 @@
   align-items: center;
   gap: 10px;
   flex-shrink: 0;
+  text-decoration: none;
 }
 
 .brand-icon {
@@ -65,20 +65,60 @@
 /* Navigation */
 
 .navbar-links {
+  position: relative;
   display: flex;
   align-items: center;
   gap: 26px;
 }
 
 .navbar-links a {
+  position: relative;
   color: var(--color-text-muted);
   font-size: 14px;
   font-weight: 600;
-  transition: color 0.2s;
+  text-decoration: none;
+  padding: 8px 4px;
+  transition: color 0.2s ease;
 }
 
 .navbar-links a:hover {
   color: var(--color-primary-dark);
+}
+
+/* التنسيق والانيميشن الخاص بالرابط النشط (Active Indicator) */
+.navbar-links a.active {
+  color: var(--color-primary-dark);
+  font-weight: 700;
+}
+
+/* التنسيق والانيميشن الخاص بالرابط النشط مع دعم كامل للوضوح في الثيم الداكن */
+.navbar-links a.active {
+  color: var(--color-primary); /* استخدام لون أساسي أفتح وأكثر وضوحاً في الدارك مود */
+  font-weight: 700;
+}
+
+.navbar-links a.active::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, #38bdf8, #0284c7); /* تدرج لون أزرق مضيء وواضح */
+  border-radius: 4px;
+  box-shadow: 0 0 12px rgba(56, 189, 248, 0.7); /* توهج أقوى ليظهر بوضوح في الخلفيات الداكنة والفاتحة */
+  animation: slideIndicator 0.3s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes slideIndicator {
+  0% {
+    opacity: 0;
+    transform: scaleX(0.4) translateY(4px);
+  }
+  100% {
+    opacity: 1;
+    transform: scaleX(1) translateY(0);
+  }
 }
 
 /* Actions */
